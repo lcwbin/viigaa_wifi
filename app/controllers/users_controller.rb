@@ -30,15 +30,16 @@ class UsersController < ApplicationController
       date = Time.new
       date = date.strftime("%Y-%m-%d")
 
-      client = Creditdetail.find_by_sql("select * from creditdetails where created_at like '"+date+"%' and userid='"+user.userid.to_s+"' limit 1")
+      client = Creditdetail.find_by_sql("select * from creditdetails where created_at like '"+date+"%' and user_id='"+user.id.to_s+"' limit 1")
       if client.length<=0
         user.update_attribute(:credits, user.credits+50)  #修改用户表的用户积分
 
         @creditdetail = Creditdetail.new()
+        @creditdetail.cid=UUIDTools::UUID.timestamp_create().to_s
         @creditdetail.credit=50
         @creditdetail.intype="1"
         @creditdetail.way="1"
-        @creditdetail.userid=user.userid
+        @creditdetail.user_id=user.id
         @creditdetail.save
       end
       render :json => {:message=>"success",:datetime=>client.length}

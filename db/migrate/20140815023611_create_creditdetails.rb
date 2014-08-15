@@ -5,7 +5,7 @@ class CreateCreditdetails < ActiveRecord::Migration
       t.integer :credit
       t.string :intype
       t.string :way
-      t.string :userid
+      t.string :user_id
 
       t.timestamps
     end

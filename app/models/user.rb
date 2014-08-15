@@ -3,4 +3,6 @@ class User < ActiveRecord::Base
   VALID_ACCOUNT_REGEX = /1[358]\d{8}/
   validates :username, presence: true, format: { with: VALID_ACCOUNT_REGEX }, uniqueness: { case_sensitive: false }
   has_secure_password
+
+  has_many :creditdetails
 end

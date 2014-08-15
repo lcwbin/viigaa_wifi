@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140815023611) do
     t.integer  "credit"
     t.string   "intype"
     t.string   "way"
-    t.string   "userid"
+    t.string   "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
