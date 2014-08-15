@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userid: MyString
+  username: MyString
+  password_digest: MyString
+  nickname: MyString
+  flow: 1
+  credits: 1
+  errorTime: 1
+  loginTime: 2014-08-15 09:57:32
+  status: MyString
+
+two:
+  userid: MyString
+  username: MyString
+  password_digest: MyString
+  nickname: MyString
+  flow: 1
+  credits: 1
+  errorTime: 1
+  loginTime: 2014-08-15 09:57:32
+  status: MyString
