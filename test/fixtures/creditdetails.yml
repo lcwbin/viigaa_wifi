@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cid: MyString
+  credit: 1
+  intyp: MyString
+  way: MyString
+  userid: MyString
+
+two:
+  cid: MyString
+  credit: 1
+  intyp: MyString
+  way: MyString
+  userid: MyString

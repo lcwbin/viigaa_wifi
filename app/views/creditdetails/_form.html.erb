@@ -1,0 +1,37 @@
+<%= form_for(@creditdetail) do |f| %>
+  <% if @creditdetail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@creditdetail.errors.count, "error") %> prohibited this creditdetail from being saved:</h2>
+
+      <ul>
+      <% @creditdetail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cid %><br>
+    <%= f.text_field :cid %>
+  </div>
+  <div class="field">
+    <%= f.label :credit %><br>
+    <%= f.number_field :credit %>
+  </div>
+  <div class="field">
+    <%= f.label :intyp %><br>
+    <%= f.text_field :intyp %>
+  </div>
+  <div class="field">
+    <%= f.label :way %><br>
+    <%= f.text_field :way %>
+  </div>
+  <div class="field">
+    <%= f.label :userid %><br>
+    <%= f.text_field :userid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

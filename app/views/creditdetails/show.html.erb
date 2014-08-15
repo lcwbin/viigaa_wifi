@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cid:</strong>
+  <%= @creditdetail.cid %>
+</p>
+
+<p>
+  <strong>Credit:</strong>
+  <%= @creditdetail.credit %>
+</p>
+
+<p>
+  <strong>Intyp:</strong>
+  <%= @creditdetail.intyp %>
+</p>
+
+<p>
+  <strong>Way:</strong>
+  <%= @creditdetail.way %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @creditdetail.userid %>
+</p>
+
+<%= link_to 'Edit', edit_creditdetail_path(@creditdetail) %> |
+<%= link_to 'Back', creditdetails_path %>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  protect_from_forgery :except => :sign_in
   # GET /users
   # GET /users.json
   def index
@@ -20,6 +21,32 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
+
+  #Sign_in
+  def sign_in
+    user = User.find_by(username: params[:user][:username])    #查找用户
+    if user && user.authenticate(params[:user][:password])    #判断是否存在用户以及检查用户密码
+
+      date = Time.new
+      date = date.strftime("%Y-%m-%d")
+
+      client = Creditdetail.find_by_sql("select * from creditdetails where created_at like '"+date+"%' and userid='"+user.userid.to_s+"' limit 1")
+      if client.length<=0
+        user.update_attribute(:credits, user.credits+50)  #修改用户表的用户积分
+
+        @creditdetail = Creditdetail.new()
+        @creditdetail.credit=50
+        @creditdetail.intype="1"
+        @creditdetail.way="1"
+        @creditdetail.userid=user.userid
+        @creditdetail.save
+      end
+      render :json => {:message=>"success",:datetime=>client.length}
+    else
+      render :json => {:message=>"fail"}
+    end
+  end
+
 
   # POST /users
   # POST /users.json

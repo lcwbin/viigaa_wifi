@@ -1,4 +1,9 @@
 ViigaaWifi::Application.routes.draw do
+  resources :creditdetails
+
+  get 'users/login'
+  match '/sign_in' ,:to=> 'users#sign_in',via:'post'
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
