@@ -44,7 +44,7 @@ class UsersController < ApplicationController
       end
       render :json => {:message=>"success",:datetime=>client.length}
     else
-      render :json => {:message=>"fail"}
+      render :json => {:message=>"fail",:request=>  request.path_info}
     end
   end
 

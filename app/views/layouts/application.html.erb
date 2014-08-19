@@ -2,13 +2,19 @@
 <html>
 <head>
   <title>ViigaaWifi</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body  class="skin-blue">
+<% if request.path_info!="/static_pages/login" %>
+<%= render 'layouts/header' %>
+<% end %>
 <%= yield %>
+<% if request.path_info!="/static_pages/login" %>
+<%= render 'layouts/left' %>
+<% end %>
 
 </body>
 </html>
